@@ -1,4 +1,7 @@
-package Class.Factory;
+package Factory;
+
+import Interface.Factory;
+import Class.Desenvolvedor;
 
 public class DesenvolvedorFactory implements Factory<Desenvolvedor> {
     @Override

@@ -1,5 +1,7 @@
-package Class.Factory;
+package Factory;
 
+import Interface.Factory;
+import Class.Usuario;
 
 public class UsuarioFactory implements Factory<Usuario> {
     @Override

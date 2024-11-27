@@ -1,4 +1,5 @@
-package Class;
+package Interface;
 
-public class Factory {
+public interface Factory<T> {
+    T create(Object... params);
 }
