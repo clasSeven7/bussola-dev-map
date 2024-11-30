@@ -1,59 +1,44 @@
-import java.util.Arrays;
+package GUI;
 
-import Interface.Factory;
-import Class.Usuario;
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import Class.Desenvolvedor;
 import Class.Portfolio;
-import Class.Arvore;
-import Class.Avaliacao;
-import Factory.UsuarioFactory;
-import Factory.DesenvolvedorFactory;
-import Factory.PortfolioFactory;
+
 import Factory.ArvoreFactory;
 import Factory.AvaliacaoFactory;
+import Factory.DesenvolvedorFactory;
+import Factory.PortfolioFactory;
 
-public class Main {
+public class MainGUI {
+    private ArvoreFactory arvoreFactory = new ArvoreFactory();
+    private AvaliacaoFactory avaliacaoFactory = new AvaliacaoFactory();
+    private DesenvolvedorFactory desenvolvedorFactory = new DesenvolvedorFactory();
+    private PortfolioFactory portfolioFactory = new PortfolioFactory();
+
+    private List<Desenvolvedor> desenvolvedores = new ArrayList<>();
+    private List<Portfolio> portfolios = new ArrayList<>();
+
+    public MainGUI() {
+        JFrame frame = new JFrame("Gerenciador de Objetos");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(800, 600);
+
+        JTabbedPane tabbedPane = new JTabbedPane();
+
+        tabbedPane.addTab("Usuário", new UsuarioPanel().createUsuarioPanel());
+        tabbedPane.addTab("Árvore", new ArvorePanel(arvoreFactory).createArvorePanel());
+        tabbedPane.addTab("Avaliação", new AvaliacaoPanel(avaliacaoFactory).createAvaliacaoPanel());
+        tabbedPane.addTab("Desenvolvedor", new DesenvolvedorPanel(desenvolvedorFactory, desenvolvedores).createDesenvolvedorPanel());
+        tabbedPane.addTab("Portfólio", new PortfolioPanel(portfolioFactory, portfolios).createPortfolioPanel());
+
+        frame.getContentPane().add(tabbedPane);
+        frame.setVisible(true);
+    }
+
     public static void main(String[] args) {
-        // Criar um Usuario
-        Factory<Usuario> usuarioFactory = new UsuarioFactory();
-        Usuario usuario = usuarioFactory.create("Saulo Justiniano", "saulo@example.com", "123456");
-        System.out.println("Usuário criado: " + usuario.getNome());
-
-        // Criar um Desenvolvedor
-        Factory<Desenvolvedor> desenvolvedorFactory = new DesenvolvedorFactory();
-        Desenvolvedor dev = desenvolvedorFactory.create("João Silva", "joao@example.com", "senha123", "Intermediário");
-        System.out.println("Desenvolvedor criado: " + dev.getNome() + " - " + dev.getNivelDeExperiencia());
-
-        // Criar um Portfolio
-        Factory<Portfolio> portfolioFactory = new PortfolioFactory();
-        Portfolio portfolio = portfolioFactory.create(
-                "Projeto X",
-                "Frontend",
-                "Ideia inovadora",
-                "Descrição do projeto",
-                Arrays.asList("JavaScript", "React"),
-                "https://github.com/joao/projeto-x"
-        );
-        System.out.println("Portfólio criado: " + portfolio.getProjeto());
-
-        // Criar uma Arvore
-        Factory<Arvore> arvoreFactory = new ArvoreFactory();
-        Arvore arvore = arvoreFactory.create(
-                1,
-                Arrays.asList("Java", "Python"),
-                Arrays.asList("OOP", "Design Patterns"),
-                Arrays.asList("Projeto 1", "Projeto 2"),
-                "Ativo"
-        );
-        System.out.println("Árvore criada com Rank: " + arvore.getRank());
-
-        // Criar uma Avaliação
-        Factory<Avaliacao> avaliacaoFactory = new AvaliacaoFactory();
-        Avaliacao avaliacao = avaliacaoFactory.create(
-                1,
-                Arrays.asList("Questão 1", "Questão 2"),
-                "Ótima performance"
-        );
-        System.out.println("Avaliação criada: " + avaliacao.avaliar());
+        new MainGUI();
     }
 }
