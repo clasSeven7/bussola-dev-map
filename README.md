@@ -141,6 +141,7 @@ Os testes verificam a lógica de componentes individuais, como:
 
 - _Backend_: Java (Nativo)
 - _Frontend_: Swing (Java)
+- _Testes_: JUnit
 
 #### EXTRA - WEB
 
