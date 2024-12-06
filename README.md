@@ -53,7 +53,7 @@ O **_bussola.dev_** oferece uma plataforma segmentada, onde desenvolvedores enco
 
 ---
 
-### 🗂 Casos de Uso
+### 🗂 Diagrama de Casos de Uso
 
 1. _Usuário iniciante deseja aprender programação_
 
@@ -71,6 +71,8 @@ O **_bussola.dev_** oferece uma plataforma segmentada, onde desenvolvedores enco
 4. _Grupo discute tendências em Inteligência Artificial_
    - Compartilhamento de insights e resolução colaborativa de problemas.
 
+<img alt="Diagrama de Casos de Uso" src="/docs/image/diagrama_de_casos_de_uso.jpeg" />
+
 ---
 
 ### 📐 Diagrama de Classes
@@ -85,7 +87,7 @@ O **_bussola.dev_** oferece uma plataforma segmentada, onde desenvolvedores enco
 
 > _Descrição_: O diagrama representa o fluxo principal de navegação do usuário desde o cadastro até a interação com o sistema de recomendações e grupos temáticos.
 
-(Adicione o diagrama visual ou descreva o fluxo em detalhes.)
+<img alt="Diagrama de Atividade" src="/docs/image/diagrama_de_atividades.jpeg" />
 
 ---
 

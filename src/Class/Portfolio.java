@@ -10,7 +10,6 @@ public class Portfolio {
     private List<String> tecnologiaUsada;
     private String linkRepositorio;
 
-    // Construtor
     public Portfolio(String projeto, String perfil, String ideia, String descricao, List<String> tecnologiaUsada, String linkRepositorio) {
         this.projeto = projeto;
         this.perfil = perfil;
@@ -19,6 +18,7 @@ public class Portfolio {
         this.tecnologiaUsada = tecnologiaUsada;
         this.linkRepositorio = linkRepositorio;
     }
+
 
     // Getters e Setters
     public String getProjeto() {

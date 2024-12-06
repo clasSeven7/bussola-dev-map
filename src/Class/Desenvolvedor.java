@@ -5,15 +5,19 @@ import java.util.List;
 
 public class Desenvolvedor extends Usuario {
     private String nivelDeExperiencia;
-    private List<Desenvolvedor> mentores = new ArrayList<>();
-    private List<Desenvolvedor> aprendizes = new ArrayList<>();
-    private List<String> linguagens = new ArrayList<>();
-    private List<String> habilidades = new ArrayList<>();
+    private List<Desenvolvedor> mentores;
+    private List<Desenvolvedor> aprendizes;
+    private List<String> linguagens;
+    private List<String> habilidades;
 
     // Construtor
     public Desenvolvedor(String nome, String email, String senha, String nivelDeExperiencia) {
         super(nome, email, senha);
         this.nivelDeExperiencia = nivelDeExperiencia;
+        this.mentores = new ArrayList<>();
+        this.aprendizes = new ArrayList<>();
+        this.linguagens = new ArrayList<>();
+        this.habilidades = new ArrayList<>();
     }
 
     // Métodos
@@ -42,20 +46,17 @@ public class Desenvolvedor extends Usuario {
         return aprendizes;
     }
 
+    public void setLinguagens(List<String> linguagens) {
+    }
+
     public List<String> getLinguagens() {
         return linguagens;
     }
 
-    public void setLinguagens(List<String> linguagens) {
-        this.linguagens = linguagens;
+    public void setHabilidades(List<String> habilidades) {
     }
 
     public List<String> getHabilidades() {
         return habilidades;
     }
-
-    public void setHabilidades(List<String> habilidades) {
-        this.habilidades = habilidades;
-    }
 }
-

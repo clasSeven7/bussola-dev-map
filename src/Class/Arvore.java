@@ -9,7 +9,6 @@ public class Arvore {
     private List<String> historico;
     private String status;
 
-    // Construtor
     public Arvore(int rank, List<String> linguagensDeProgramacao, List<String> competencias, List<String> historico, String status) {
         this.rank = rank;
         this.linguagensDeProgramacao = linguagensDeProgramacao;
